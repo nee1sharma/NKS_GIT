@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:int="http://www.springframework.org/schema/integration"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.1.xsd">
+
+
+		<bean class="com.sharma.nk.transformers.CredentialsTransformer" id="credentialsTransformer" />
+		<bean class="com.sharma.nk.transformers.UserProfileTransformer" id="userProfileTransformer" />
+
+		<bean class="com.sharma.nk.validators.UserProfileValidations" id="userProfileValidations"/>
+		<bean class="com.sharma.nk.validators.CredentialValidations" id="credentialValidations" />
+		
+		<bean class="com.sharma.nk.dao.UserProfileDAO" id="userProfileDAO" />
+		<bean class="com.sharma.nk.dao.CredentialsDAO" id="credentialsDAO" />
+
+		<int:channel id="responseChannel" />
+		<int:channel id="requestChannel" />
+		<int:channel id="addNewUserChannel" />
+		<int:channel id="deleteUserProfileChannel" />
+		<int:channel id="findUserByIdChannel" />
+		<int:channel id="addCredentialsChannel" />
+		<int:channel id="authenticateChannel" />
+		<int:channel id="authorizeChannel" />
+		<int:channel id="logoutChannel" />
+
+
+		<int:gateway service-interface="com.sharma.nk.dao.IUserProfileDAO" id="userDAO"
+				default-request-channel="requestChannel" default-reply-channel="responseChannel">
+				<int:method name="addNewUser" request-channel="addNewUserChannel" />
+				<int:method name="deleteUserProfile" request-channel="deleteUserProfileChannel" />
+				<int:method name="findUserById" request-channel="findUserByIdChannel" />
+		</int:gateway>
+
+		<int:chain input-channel="addNewUserChannel" output-channel="responseChannel">
+				<int:filter method="isValidEmailAndInputString" ref="userProfileValidations" />
+				<int:transformer ref="userProfileTransformer" method="transform" />
+				<int:service-activator method="addNewUser" ref="userProfileDAO" />
+		</int:chain>
+
+
+
+		<!-- ############################################################################# -->
+
+		<int:gateway service-interface="com.sharma.nk.dao.ICredentialsDAO" id="credDao"
+				default-request-channel="requestChannel" default-reply-channel="responseChannel">
+				<int:method name="addCredentials" request-channel="addCredentialsChannel" />
+				<int:method name="authenticate" request-channel="authenticateChannel" />
+				<int:method name="authorize" request-channel="authorizeChannel" />
+				<int:method name="logout" request-channel="logoutChannel" />
+		</int:gateway>
+
+		<int:chain input-channel="addCredentialsChannel" output-channel="responseChannel" >
+				<int:filter ref="credentialValidations" method="isValidInputString" throw-exception-on-rejection="true"/>
+				<int:transformer ref="credentialsTransformer" method="transform" />
+				<int:service-activator ref="credentialsDAO" method="addCredentials" />
+		</int:chain>
+
+		<int:chain input-channel="authenticateChannel" output-channel="responseChannel">
+				<int:filter ref="credentialValidations" method="isValidInputString" throw-exception-on-rejection="true" />
+				<int:transformer ref="credentialsTransformer" method="transform" />
+				<int:service-activator ref="credentialsDAO" method="authenticate" />
+		</int:chain>
+
+		<int:service-activator ref="credentialsDAO" input-channel="logoutChannel"
+				output-channel="responseChannel" method="logout"/>
+
+</beans>

@@ -1,0 +1,184 @@
+@CHARSET "ISO-8859-1";
+.addform {
+
+}
+TABLE{
+	margin: 10px;
+}
+.product{
+	margin-top: 10px;
+	border-radius: 3px;
+	border: 2px solid purple;
+	width: 450px;		
+}
+.buttons{
+	margin:5px 10px 25px 40px;
+	width:400px;	
+}
+.button{
+	background-color:#008CBA;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 10px 2px 2px;
+    cursor: pointer; 
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.6s;
+    box-shadow: 0 5px #999;
+}
+.button:active{
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(3px);
+}
+
+.submit{
+    background-color: #04c0ff;
+    color: white;
+    border: 2px solid #008CBA;
+}
+.submit:hover{
+	background-color: #008CBA;
+}
+
+.back{
+	width:150px;
+	margin-left:25px;
+	background-color: #ff8080;
+	color: white;
+    border: 2px solid #ff6262;
+}
+.back:hover{
+	background-color: #ff6262;
+}
+
+.table_subject{
+	text-decoration:underline;
+	font-weight:bold;
+	background-color: #a20bc1;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 18px;
+    
+}	
+
+
+.product_table {
+	
+}
+
+#product_desc {
+	font-size: 1.2em;
+	font-weight: bold;
+	border: 2px solid black;
+	BACKGROUND-COLOR: #f4f4f4;
+}
+
+#product_info {
+	border: 2px solid black;
+	BACKGROUND-COLOR: #f4f4f4;
+}
+
+.div-product-table {
+	display: table;
+	width: auto;
+	background-color: #eee;
+	border: 1px solid #666666;
+	border-spacing: 5px; /*cellspacing:poor IE support for  this*/
+}
+
+.div-product-row {
+	font-weight: bold;
+	display: table-row;
+	width: auto;
+	clear: both;
+}
+
+.div-table-product_info-row {
+	display: table-row;
+	width: auto;
+	clear: both;
+}
+
+.div-table-col {
+	float: left; /*fix for  buggy browsers*/
+	display: table-column;
+	width: 200px;
+	background-color: #ccc;
+}
+
+.div-table-header {
+	float: left; /*fix for  buggy browsers*/
+	display: table-column;
+	width: 200px;
+	background-color: #ccc;
+}
+
+.div-table-col-desc {
+	width: 400px;
+	float: left; /*fix for  buggy browsers*/
+	display: table-column;
+	background-color: #69a;
+	color: white;
+}
+
+
+
+#div_product_by_id {
+	float: right; height : 150px;
+	width: 300px;
+	background-color: lightblue;
+	border: 5px solid lightpurple;
+	height: 150px;
+}
+
+#div_product_by_id input {
+	margin-top: 4px;
+	padding: 10px 5px 10px 32px;
+	width: 200px;
+}
+
+.add_product{
+	border: 1px solid purple;
+	border-right: 10px solid purple;
+	margin:20px;
+}
+
+.verify_product{
+	background: aqua;
+	margin:20px;
+}
+
+.verify{
+/* 	margin-top: 100px;
+	border-radius: 3px;
+	border: 2px solid purple;	 */
+	border: 1px solid rgb(28, 108, 122);
+	margin-top: 10px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254),
+		0px 5px 3px 3px rgb(210, 210, 210);
+	-moz-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254), 0px
+		5px 3px 3px rgb(210, 210, 210);
+	box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254), 0px 5px
+		3px 3px rgb(210, 210, 210);
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+#view_product{
+	margin: 80px;
+	background: aqua;
+	padding: 5px;
+}

@@ -1,0 +1,326 @@
+body {
+	background-color: #6bc8e7;
+}
+
+header {
+	height: 45px;
+	background-color: lightseagreen;
+}
+
+footer {
+	height: 45px;
+	background-color: #b6ef5f;
+	color: white;
+	text-align: center;
+}
+
+footer label {
+	padding: 50px;
+}
+
+#div_menu {
+	/* 	height: 40px; */
+	background-color: #6bc8e7;
+	color: white;
+	font-size: 1.2em;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#div_heading {
+	background-color: #6699ee;
+	color: white;
+	font-size: 1.5em;
+}
+
+#div_menu a {
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	border-left: 2px solid white;
+	padding: 10px;
+	cursor: default;
+	justify-content: right;
+}
+
+#div_menu #userId {
+	font-weight: bold;
+	font-size: 40px;
+	padding: 2px 0 10px 0;
+	text-decoration: underline;
+	font-family: 'Copperplate Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+#div_menu a:hover {
+	text-decoration: none;
+	color: white;
+	background-color: purple;
+}
+
+div#line {
+	border-bottom: 2px solid purple;
+	padding: 2px;
+}
+
+.cdiv_container {
+	min-height: 400px;
+	margin: 0px auto;
+	/*position: relative;	
+	background-color: #80ffff; */
+}
+
+p label {
+	color: rgb(64, 92, 96);
+	position: relative;
+}
+
+/*Styling button*/
+p.button input {
+	width: 30%;
+	cursor: pointer;
+	background: rgb(61, 157, 179);
+	padding: 8px 5px;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+	color: #fff;
+	font-size: 1.3em;
+	border: 1px solid rgb(28, 108, 122);
+	margin-bottom: 10px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254),
+		0px 5px 3px 3px rgb(210, 210, 210);
+	-moz-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254), 0px
+		5px 3px 3px rgb(210, 210, 210);
+	box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254), 0px 5px
+		3px 3px rgb(210, 210, 210);
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+p.button input:hover {
+	background: rgb(74, 179, 198);
+}
+
+/* all the input except submit and checkbox */
+input:not ([type="checkbox,submit"] ){
+	width: 92%;
+	margin-top: 4px;
+	padding: 10px 5px 10px 32px;
+	border: 1px solid rgb(178, 178, 178);
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+	-moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+	box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+input:not ([type="checkbox"] ):focus {
+	border: 1px solid rgba(91, 90, 90, 0.7);
+	/*background: rgba(238, 236, 240, 0.2);*/
+	s -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+	-moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+	box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+}
+
+/** fonts used for the icons **/
+@font-face {
+	font-family: 'FontomasCustomRegular';
+	src: url('fonts/fontomas-webfont.eot');
+	src: url('fonts/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+		url('fonts/fontomas-webfont.woff') format('woff'), url('fonts/fontomas-webfont.ttf')
+		format('truetype'), url('fonts/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/** the magic icon trick ! **/
+[data-icon]:after {
+	content: attr(data-icon);
+	font-family: 'FontomasCustomRegular';
+	color: rgb(106, 159, 171);
+	position: absolute;
+	left: 10px;
+	top: 35px;
+	width: 40px;
+}
+
+/*Login and register form*/
+#register, #homepage, #login {
+	width: 300px;
+	padding: 0px 6% 0px 6%;
+	margin: 0 0 15px 0;
+	background: rgb(247, 247, 247);
+	border: 1px solid rgba(147, 184, 189, 0.8);
+	-webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4)
+		inset;
+	-moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4)
+		inset;
+	box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#register h1 {
+	font-size: 40px;
+	color: rgb(6, 106, 117);
+	padding: 2px 0 10px 0;
+	font-family: 'Copperplate Gothic', 'Arial Narrow', Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+/** For the moment only webkit supports the background-clip:text; */
+#register h1 {
+	background: -webkit-repeating-linear-gradient(-45deg, rgb(18, 83, 93), rgb(18, 83, 93) 20px,
+		rgb(64, 111, 118) 20px, rgb(64, 111, 118) 40px, rgb(18, 83, 93) 40px);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+#register h1:after {
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 2px;
+	/* 	margin-top: 10px; */
+	background: -moz-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%,
+		rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(147, 184, 189, 0)),
+		color-stop(20%, rgba(147, 184, 189, 0.8)), color-stop(53%, rgba(147, 184, 189, 1)),
+		color-stop(79%, rgba(147, 184, 189, 0.8)), color-stop(100%, rgba(147, 184, 189, 0)));
+	background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%,
+		rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: -o-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%,
+		rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: -ms-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%,
+		rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+	background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%,
+		rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+}
+
+#subject_master_list {
+	width: 300px;
+	color: #00ffff;
+}
+
+.subject {
+	font-size: 1.3em;
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #0080c0;
+	border: none;
+	color: #FFFFFF;
+	font-size: 28px;
+	padding: 15px;
+	width: 250px;
+	transition: all 0.5s;
+	margin: 5px;
+}
+
+.subject span.xBtn {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.subject span.xBtn:AFTER {
+	content: 'X';
+	font-family: forte;
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.subject span:hover span.xBtn:after {
+	padding-right: 35px;
+	opacity: 1;
+	font: 10px;
+}
+
+.userclass{
+	background-color: #800040;
+	color: white;
+}
+
+#top_nav{
+	position:fixed;
+	top:0px;
+	width: 100%;
+	height: 50px;
+}
+.nks-main{
+	margin-top: 60px;
+	border: 5px red thick; 	
+}
+
+.nks-container{
+	margin-left: 300px;
+	padding: 0.01em 16px;
+	width:900px;
+}
+/* Color */
+.nks-blue{
+	color: #fff!important;
+    background-color: #2196F3!important;
+}
+.nks-green{
+	color: #fff!important;
+    background-color: #21F396!important;
+}
+
+.product_name span{
+	font-weight: 600;
+    margin: 10px 10px;
+    font-size: 1.5em;
+}
+.product_name{
+	display:flex;
+}
+
+
+
+.manufacturer{
+    font-size: 1.25em;
+    display: grid;
+}
+.manufacturer span {
+	margin: 5px 20px;
+	text-align: right;
+}
+
+.product_area{
+	box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)!important;
+	width: 400px;
+	height:200px;
+	margin:15px;
+	border: 15px black;
+	float:left;
+}
+
+
+
+.production_description{
+	padding:2px;
+}
+
+.description{
+	margin-top:15px;
+	margin-left:25px;
+	height:100px;
+}
